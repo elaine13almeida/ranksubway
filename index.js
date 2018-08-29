@@ -2,16 +2,17 @@ const express = require('express');
 
 const app = express();
 app.set('view engine', 'ejs');
+app.use('/static', express.static('static'));
 
 app.get('', (req, res) => {
     res.render('index');
 });
 
-app.get('/gatos', (req, res) => {
+app.get('/estacoes', (req, res) => {
     res.render('gatos');
 });
 
-app.get('/sobre', (req, res) => {
+app.get('/comentarios', (req, res) => {
     res.render('sobre');
 });
 
